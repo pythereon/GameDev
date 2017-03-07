@@ -1,0 +1,107 @@
+<body bgcolor=lightgrey onkeydown="{
+if ( String.fromCharCode(event.keyCode) == 'd') {
+document.getElementById('my01').click()
+}
+
+else {
+( String.fromCharCode(event.keyCode) == 'a') {
+document.getElementById('my01').click()
+
+}
+}">
+    
+<input type=button value="A" onclick="{
+    document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'
+    checkAll()
+}">
+
+<input type=button value="D" onclick="{
+    document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'
+    checkAll()
+}">
+
+<input type=button value="S" onclick="{
+    document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+5+'px'
+    checkAll()
+}">
+
+<input type=button value="W" onclick="{
+    document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)-5+'px'
+    checkAll()
+}">    
+
+
+<body background="http://www.hope.co.nz/projects/stars/stars_ss_31.jpg" onload="myTimer = setInterval('myScroll()', 100)"    onkeypress="{
+    if(event.keyCode==100){    document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+5+'px'}   // small 'd' key go right
+	if(event.keyCode==97){    document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)-5+'px'}   // small 'a' key go left
+	if(event.keyCode==119){   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)-5+'px'}   // small 'w' key go up
+    if(event.keyCode==115){   document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+5+'px'}   // small 's' key go down
+}">
+
+<script> 
+document.mySpeedX = 0;
+document.mySpeedY = 0;
+
+function myAuto(){
+
+  if(parseInt(document.getElementById('move1').style.left) > window.innerWidth - document.getElementById('move1').width){
+       document.mySpeedX *= -1
+   }
+
+  document.getElementById('move1').style.left = parseInt(document.getElementById('move1').style.left)+document.mySpeedX+'px'
+  document.getElementById('move1').style.top  = parseInt(document.getElementById('move1').style.top)+document.mySpeedY+'px'
+
+
+
+// auto moving "move2" should occur here similar to the above.
+//folowing code showes where move 2 and move3, move4 etc are located
+
+document.getElementById('myShowDiv1').innerHTML = 'move1 x='+parseInt(document.getElementById('move1').style.left) +
+', y='+parseInt(document.getElementById('move1').style.top)
+
+document.getElementById('myShowDiv2').innerHTML = 'move2 x='+parseInt(document.getElementById('move2').style.left) +
+', y='+parseInt(document.getElementById('move2').style.top) +
+'<br> move2 x='+parseInt(document.getElementById('move2').style.left) +', y='+parseInt(document.getElementById('move2').style.top) +
+'<br> move2 x='+parseInt(document.getElementById('move2').style.left) +', y='+parseInt(document.getElementById('move2').style.top)
+
+
+
+
+}
+
+
+function myGunPrep(){
+
+    document.getElementById('bullet1').style.visibility  = 'visible'
+    document.getElementById('bullet1').style.left  = document.getElementById('move1').style.left
+    document.getElementById('bullet1').style.top   = document.getElementById('move1').style.top
+    
+   clearInterval(document.myShot)
+   document.myShot = setInterval('myGun()', 30) // calls the function every 30 mille seconds
+
+}
+
+
+function myGun(){
+
+    document.getElementById('bullet1').style.top  = parseInt(document.getElementById('bullet1').style.top) - 20 + 'px'
+
+}
+
+
+</script>
+
+<img  id="move1"  src="http://cdn.osxdaily.com/wp-content/uploads/2013/07/dancing-banana.gif"  style="position:absolute; width:30px; height:30px; left:700px; top:800px"> 
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </body> 
