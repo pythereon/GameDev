@@ -7,6 +7,111 @@ My page is running Mr.Ellis ;)
 
 <h1 align=center>Full Phonegap Computer Programming Course Summary By Antonio</h1>
 
+<body>
+
+<canvas id="canvas" width="400" height="400"
+style="background-color:#336699">
+</canvas>
+
+<br><br><br>
+
+<style>
+body {
+    background-color: #336699;
+}
+</style>
+
+<style type="text/css">
+    body{text-align:center}
+
+</style>
+
+<script>
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = 'black';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+
+
+<br><br><br>
 
 <a href="http://google.ca">Google.ca</a><br>
 <a href="https://pythereon.github.io/pgb-cloud9/">My Github Cloud9</a><br>
@@ -17,13 +122,12 @@ My page is running Mr.Ellis ;)
 <a href="T3A04-loops-Antonio.html">T3A04-loops-Antonio.html</a><br>
 <a href="T3A05-if-loop-Antonio.html">T3A05-if-loop-Antonio.html</a><br>
 <a href="T3A06-easy-Antonio.html">T3A06-easy-Antonio.html</a><br>
- <a href="T3A07-Move-Antonio.html">T3A07-Move-Antonio.html<br>
+<a href="T3A07-Move-Antonio.html">T3A07-Move-Antonio.html<br>
 <a href="https://github.com/">Github Website - https://github.com/</a><br>
-<a href="https://github.com/hpssjellis/pgb-cloud9">Github Repository - https://github.com/hpssjellis/pgb-cloud9</a><br>
+<a href="https://github.com/pythereon/GameDev">My Github - https://github.com/pythereon/GameDev</a><br>
 <a href="https://c9-des-2017-pytherion.c9users.io/">Cloud9 Workspace - https://c9-des-2017-pytherion.c9users.io</a><br>
 <a href="http://www.c9.io">Cloud9 Website - http://www.c9.io </a><br>
 <a href="meow.html">Ellis I told you last time not to click it!</a><br>
-<a href=""></a><br>
 <a href=""></a><br>
 <a href=""></a><br>
 <a href=""></a><br>
@@ -51,7 +155,6 @@ Also eventually erase these instructions to show that you want this page marked.
 
 
 <br><br>Move this marker when you get the following links working<br><br>
-
 
 
 
