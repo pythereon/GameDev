@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    background-color: lightgrey;
+}
+</style>
+
+<script>
+    document.myHuman = new Array(7)
+    
+    document.myHuman[0] = '<font color=red>Bob</font>'
+    document.myHuman[1] = '<font color=orange>Fred</font>'
+    document.myHuman[2] = '<font color=yellow>Greg</font>'
+    document.myHuman[3] = '<font color=green>Tim</font>'
+    document.myHuman[4] = '<font color=blue>Jimmy</font>'
+    document.myHuman[5] = '<font color=indigo>George</font>'
+    document.myHuman[6] = '<font color=violet>Jack</font>'
+    document.myHuman[7] = 'Jeff'
+    
+    </script>
+    
+    <input type=button value="Show Array" onclick="{
+    document.getElementById('myDiv1').innerHTML = ''
+    for (myLoop = 0; myLoop <=7; myLoop++){
+        document.getElementById('myDiv1').innerHTML += myLoop +' '+ document.myHuman[myLoop] + ' <br>'
+        }
+    }">
+        
+        
+        <div id="myDiv1"> Output Here </div> 
+
+
+<br><br><br><br>
+
+
+<font color=grey>        
+
+<script>
+var points = [1, 2, 3, 4, 5, 6];
+document.getElementById("demo").innerHTML = points;    
+
+function myFunction() {
+    points.sort(function(a, b){return 0.5 - Math.random()});
+    document.getElementById("demo").innerHTML = points;
+}
+</script>
+
+<button onclick="myFunction()">Numbers! (keep pressing)</button>
+<p id="demo"></p>
+
+</font>
