@@ -1,0 +1,64 @@
+<input type=button value="jQuery Style Inline Function" onClick="{
+(function(){
+    document.getElementById('myDiv1').innerHTML= 'jQuery style functions'
+    })()
+}">
+
+<br><br>
+
+<script>
+function myAlert(myWords){
+     document.getElementById('myDiv1').innerHTML = myWords
+}    
+</script>
+
+<input id="myText1" size=100 type=text value="Fred <font color= red> Smith </font>."><br>
+
+<input type=button value="Regular Function" onclick="{
+ myAlert(document.getElementById('myText1').value)
+ }">
+ 
+<input type=button value="jQuery Functions" onclick="{
+ alert('you do it for 8/9')
+ }">
+ 
+<div id="myDiv1"> Output goes here </div>
+
+<br><br><br><br>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideDown(5000);
+    });
+    $("#stop").click(function(){
+        $("#panel").stop();
+    });
+});
+</script>
+ 
+<style> 
+#panel, #flip {
+    padding: 10px;
+    font-size: 28px;
+    text-align: center;
+    background-color: lightgrey;
+    color: blue;
+    border: solid 2px grey;
+    border-radius: 13px;
+}
+
+#panel {
+    padding: 100px;
+    display: none;
+}
+</style>
+
+ 
+<button id="stop">Stop it from dropping down.</button>
+
+<div id="flip">Click This Text</div>
+<div id="panel">Cool, right? <br> <img src="https://s-media-cache-ak0.pinimg.com/originals/17/bc/00/17bc00f55dd8f9e8893e6d4a5d6e52ac.jpg"></div>
+
