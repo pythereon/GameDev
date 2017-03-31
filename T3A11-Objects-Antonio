@@ -1,0 +1,65 @@
+<script>
+
+// set the object
+function myStudent(myAge, myName, myImg){
+    this.myStudentAge = myAge
+    this.myStudentName = myName
+    this.myStudentImage = myImg
+    this.myInfo = myStudentInfo
+    }
+    
+function myStudentInfo(){
+    document.getElementById('myDiv1').innerHTML = ' My name is ' +
+        this.myStudentName + ' I am ' + this.myStudentAge +
+            ' years old. Here is my picture <img width=77 src='+this.myStudentImage+'><br>'
+    }
+    
+
+</script>
+
+<input type=button value="Fred Object" onclick="{
+    myFred = new myStudent(100, 'Fred', 'https://www.rover.com/blog/wp-content/uploads/2015/05/dog-candy-junk-food-599x340.jpg')
+    myFred.myInfo()
+}">
+
+<input type=button value="Jim Object" onclick="{
+    myJim = new myStudent(200, 'Jim', 'https://cdn.pixabay.com/photo/2015/09/06/20/31/frog-927765_960_720.jpg')
+    myJim.myInfo()
+}">
+
+<input type=button value="Bob Object" onclick="{
+    myBob = new myStudent(300, 'Bob', 'http://static2.businessinsider.com/image/5654150584307663008b4ed8/this-tech-recruiter-owns-the-most-hipster-cat-on-instagram.jpg')
+    myBob.myInfo()
+}">
+
+<input type=button value="Greg Object" onclick="{
+    myGreg = new myStudent(400, 'Greg', 'https://animalcorner.co.uk/wp-content/uploads/2015/02/cows-1.jpg')
+    myGreg.myInfo()
+}">
+
+<input type=button value="Harold Object" onclick="{
+    myHarold = new myStudent(500, 'Harold', 'http://d2fbmjy3x0sdua.cloudfront.net/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg?itok=ttMfUhUu')
+    myHarold.myInfo()
+}">
+    
+<input type=button value="Tim Object" onclick="{
+    myTim = new myStudent(600, 'Tim', 'http://www.southdacola.com/blog/wp-content/uploads/2014/06/chicken_sombrero.gif')
+    myTim.myInfo()   
+}">
+
+<input type=button value="Jeff Object" onclick="{
+    myJeff = new myStudent(700, 'Jeff', 'http://animal-dream.com/data_images/duck/duck8.jpg')
+    myJeff.myInfo() 
+}">
+
+<input type=button value="George Object" onclick="{
+    myGeorge = new myStudent(800, 'George', 'http://elelur.com/data_images/mammals/walrus/walrus-04.jpg')
+    myGeorge.myInfo()
+}">
+    
+<input type=button value="Kreg Object" onclick="{
+    myKreg = new myStudent(900, 'Kreg', 'http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/A-G/gray-wolf-closeup.jpg.adapt.945.1.jpg')
+    myKreg.myInfo()    
+}">
+
+<div id="myDiv1"> Output Here</div>
