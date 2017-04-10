@@ -2,20 +2,22 @@
 
 // set the object
 function myStudent(myAge, myName, myImg){
-    this.myStudentAge = myAge
-    this.myStudentName = myName
-    this.myStudentImage = myImg
-    this.myInfo = myStudentInfo
-    }
-    
+   this.myStudentAge = myAge
+   this.myStudentName = myName
+   this.myStudentImage = myImg
+   this.myInfo = myStudentInfo
+}
+
 function myStudentInfo(){
-    document.getElementById('myDiv1').innerHTML = ' My name is ' +
-        this.myStudentName + ' I am ' + this.myStudentAge +
-            ' years old. Here is my picture <img width=77 src='+this.myStudentImage+'><br>'
-    }
-    
+   document.getElementById('myDiv1').innerHTML += ' My name is ' + 
+       this.myStudentName + ' I am ' + this.myStudentAge +
+       ' years old. Here is my picture <br><img width=70 src =' + this.myStudentImage +
+       '><br><br>'
+}
 
 </script>
+
+
 
 <input type=button value="Fred Object" onclick="{
     myFred = new myStudent(100, 'Fred', 'https://www.rover.com/blog/wp-content/uploads/2015/05/dog-candy-junk-food-599x340.jpg')
@@ -57,9 +59,59 @@ function myStudentInfo(){
     myGeorge.myInfo()
 }">
     
+
 <input type=button value="Kreg Object" onclick="{
     myKreg = new myStudent(900, 'Kreg', 'http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/A-G/gray-wolf-closeup.jpg.adapt.945.1.jpg')
     myKreg.myInfo()    
 }">
 
+
+<br><br><br>
+
+<script>
+    document.myHuman = new Array(8)
+    
+    document.myHuman[0] = new myStudent(100, 'Fred', 'https://www.rover.com/blog/wp-content/uploads/2015/05/dog-candy-junk-food-599x340.jpg')
+    
+    document.myHuman[1] = new myStudent(200, 'Jim', 'https://cdn.pixabay.com/photo/2015/09/06/20/31/frog-927765_960_720.jpg')
+  
+    document.myHuman[2] = new myStudent(300, 'Bob', 'http://static2.businessinsider.com/image/5654150584307663008b4ed8/this-tech-recruiter-owns-the-most-hipster-cat-on-instagram.jpg')
+  
+    document.myHuman[3] = new myStudent(400, 'Greg', 'https://animalcorner.co.uk/wp-content/uploads/2015/02/cows-1.jpg')
+
+    document.myHuman[4] = new myStudent(500, 'Harold', 'http://d2fbmjy3x0sdua.cloudfront.net/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg?itok=ttMfUhUu')
+  
+    document.myHuman[5] = new myStudent(600, 'Tim', 'http://www.southdacola.com/blog/wp-content/uploads/2014/06/chicken_sombrero.gif')
+ 
+    document.myHuman[6] = new myStudent(700, 'Jeff', 'http://animal-dream.com/data_images/duck/duck8.jpg')
+ 
+    document.myHuman[7] = new myStudent(800, 'George', 'http://elelur.com/data_images/mammals/walrus/walrus-04.jpg')
+   
+    document.myHuman[8] = new myStudent(900, 'Kreg', 'http://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/A-G/gray-wolf-closeup.jpg.adapt.945.1.jpg')
+    
+
+    </script>
+    
+    <input type=button value="Show Array" onclick="{
+    document.getElementById('myDiv1').innerHTML = ''
+    for (myLoop = 0; myLoop <=8; myLoop++){
+        document.getElementById('myDiv1').innerHTML += myLoop +' '+ document.myHuman[myLoop] + ' <br>'
+        }
+    }">
+
+
+
+<br><br><br>
+
+<br><br><br>
+
+
+
 <div id="myDiv1"> Output Here</div>
+
+
+
+
+
+
+    
